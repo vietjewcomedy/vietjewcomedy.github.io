@@ -45,14 +45,10 @@ var addRows = function(sorted) {
   };
 }
 
+// Note: time zone needs to be set on the calendar event.
 var getTime = function(item) {
-  // var offsets = {"America/New_York": 3, "America/Chicago": 2, "America/Denver": 1}
   var startTime = new Date(item.start.dateTime);
-  // var tz = item.start.timeZone;
-  // if (offsets[tz]) {
-  //   startMS = Date.parse(startTime);
-  //   startTime = new Date(startMS + (3600000 * offsets[tz]));
-  // }
+  
   return startTime;
 }
 
