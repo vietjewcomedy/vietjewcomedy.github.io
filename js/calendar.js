@@ -103,7 +103,7 @@ var venuePageString = function(venueLink) {
 
 var toShowObject = function(item) {
   var description = !!item.description ? item.description : "";
-  var chunks = description.split("\n");
+  var chunks = description.split("<br>");
   var show = {};
   chunks.forEach(function(chunk){
     var separate = chunk.search(":");
