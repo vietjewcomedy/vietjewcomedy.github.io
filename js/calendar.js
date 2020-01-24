@@ -48,7 +48,6 @@ var addRows = function(sorted) {
 // Note: time zone needs to be set on the calendar event.
 var getTime = function(item) {
   var startTime = new Date(item.start.dateTime);
-  
   return startTime;
 }
 
@@ -109,7 +108,10 @@ var toShowObject = function(item) {
   chunks.forEach(function(chunk){
     var separate = chunk.search(":");
     var key = chunk.slice(0, separate);
-    var object = chunk.slice(separate+2);
+    var object = chunk.slice(separate+1);
+    if (object[0] == ' ') {
+      object = object.slice(1);
+    }
     show[key] = object;
   });
   return show;
@@ -127,7 +129,7 @@ var titleString = function(showObject, title) {
   var middle;
   var link = setAttribute(showObject, "link");
   if (!!showObject.link) {
-    middle = "<a href='" + showObject.link + "' target='_blank'>" + title + "</a>";
+    middle = "<a href='" + showObject.link.replace(" ", "") + "' target='_blank'>" + title + "</a>";
   } else {
     middle = title;
   }
