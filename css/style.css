@@ -56,9 +56,19 @@
 	width: 30%;
 }
 
+.youtube {
+	align-items: center;
+}
+
 /*********************************************************************************/
 /* Basic                                                                         */
 /*********************************************************************************/
+
+	body {
+		max-width: 1200px;
+		margin: auto;
+		background-color: black;
+	}
 
 	body, input, textarea, select
 	{
